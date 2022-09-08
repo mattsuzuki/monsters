@@ -6,11 +6,11 @@ class SearchBox extends Component {
     render(){
         return (
           <input
-            // className="search-box"
+            className={this.props.className}
             type="search"
-            placeholder="Search"
+            placeholder={this.props.placeholder}
             // onChange is an anonymous function
-            onChange={onSearchChange}
+            onChange={this.props.onChangeHandler}
           />
         );
     }
