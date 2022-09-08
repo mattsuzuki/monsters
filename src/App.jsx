@@ -1,10 +1,9 @@
 import { Component } from "react";
-// import logo from "./logo.svg";
+
 import "./App.css";
 
 class App extends Component {
   constructor() {
-    //calling constructor method on Component, super() ALWAYS needs to be ran
     super();
 
     this.state = {
@@ -15,13 +14,16 @@ class App extends Component {
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
-      .then((users) => this.setState(() => {
-            return { monters: users };
+      .then((users) =>
+        this.setState(
+          () => {
+            return { monsters: users };
           },
           () => {
             console.log(this.state);
           }
-        ));
+        )
+      );
   }
 
   render() {
